@@ -2,11 +2,6 @@ language: php
 
 php:
   - 5.5
-  
-  # Commands to be run before your environment runs.
-before_script:
-  - composer self-update
-  - composer install --prefer-source --no-interaction --dev
 
-# Commands you want to run that will verify your build.
-script: phpunit
+script:
+- phpcs -p -s -v . --standard=PSR2 --extensions=php
