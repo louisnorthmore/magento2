@@ -3,5 +3,10 @@ language: php
 php:
   - 5.5
 
+before_script:
+# install codesniffer
+  - pear config-set auto_discover 1
+  - pear install PHP_CodeSniffer
+
 script:
-- phpcs -p -s -v . --standard=PSR2 --extensions=php
+  - phpcs -p -s -v . --standard=PSR2 --extensions=php
